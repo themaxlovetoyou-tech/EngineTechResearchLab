@@ -5,6 +5,20 @@
 
 ---
 
+## v1.6 · 2026-06-20（已发布）
+
+**主题**：L10–L12 按"科斯脊柱"重构 + 重命名 + 一个交互 bug 修复。
+
+- **L10–L12 重命名 + 重定义**（全站统一：TOC / §01 全栈 / §02 关系 / 卡片标题 / pulse 标签 / 交叉引用）：
+  - L10 「AI native 部门 / AI-Native Departments」→ **「AI 原生执行单元 / AI-Native Execution Units」**。本质：AI 首先重构的不是"部门"，而是"完成一件事的最小执行单元"；存量组织内部被重写（边界内部）。tag → 存量重构。
+  - L11 「AI native 公司 / AI-Native Companies」→ **「AI 原生公司 / AI-Native Firms」**。本质：执行单元廉价化后公司边界被重画，组织收缩到不可被 Agent 替代的内核（科斯边界坍缩）。tag → 重画边界。
+  - L12 「AI native 经济生态 / Agentic Economy」→ **「AI 原生经济 / Agentic Economy」**。本质：交易成本趋零，公司与市场界限溶解，经济原语从"企业"退回"交易"。tag → 边界溶解。
+  - 三层 layer-desc 全部改写为新本质；脊柱：单元→边界→市场（科斯被 AI 逐级击穿），由 L9 Agent 可靠性这一阀门驱动。
+- **交互 bug 修复**：layer 卡片"近期动态 · 查看 ↗"锚点指向 `#pulse-N`，但旧批次默认折叠（`.pulse-batch.collapsed > .pulse-entry { display:none }`），点击会跳到隐藏元素、看不到内容。修复：点击锚点前，若目标在折叠批次内则先展开该批次再滚动。
+- **性能/清理**：移除 `setupPulseCollapse` 里一段对全页 `querySelectorAll('*')` 扫描却从未使用的死代码（`startMarker`）。
+- 旧版备份 `backups/AI产业框架地图_v1.5_2026-06-08.html`；SPEC 头部、§3.1、§7 同步；版本三处 bump v1.5→v1.6。
+- 验证：HTMLParser 0 错误、div 收支平衡、JS 两处改动经 Read 核对括号闭合、新名 0 残留旧名。
+
 ## v1.5 · 2026-06-08（已发布 · 发布准备）
 
 **主题**：上线前硬化 —— 社交分享、合规、部署回路。
